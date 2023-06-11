@@ -12,10 +12,16 @@ import {
 
 const windowWidth = Dimensions.get("window").width;
 
-const SetDetailView = ({ set, cards, loading }) => {
+const SetDetailView = ({ set, cards, loading, navigation }) => {
   const renderCardItem = ({ item }) => {
     return (
-      <TouchableOpacity style={styles.cardItemContainer} onPress={() => console.log(item)}>
+      <TouchableOpacity
+        style={styles.cardItemContainer}
+        onPress={() => {
+          console.log('Card',item);
+          navigation.navigate("CardDetail", { card: item });
+        }}
+      >
         <Image
           source={{ uri: item.images.small }}
           style={styles.cardImage}
