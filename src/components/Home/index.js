@@ -1,13 +1,12 @@
 import React from "react";
-import HomeViewModel from "./HomeViewModel";
+import useHomeViewModel from "./HomeViewModel";
 import HomeView from "./HomeView";
 
 const HomeScreen = ({ navigation }) => {
-  const { recentlyAddedCards = [], newTCGSets = [] } =
-    HomeViewModel();
+  const props = useHomeViewModel();
 
   return (
-    <HomeView recentlyAddedCards={recentlyAddedCards} newTCGSets={newTCGSets} navigation={navigation} />
+    <HomeView {...props} navigation={navigation} />
   );
 };
 
