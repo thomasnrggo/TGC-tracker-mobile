@@ -23,7 +23,7 @@ const CardDetail = ({
       <View style={styles.infoContainer}>
         <InfoRow title="Artist" value={card.artist} />
         <InfoRow title="Set" value={card.set.name} />
-        <InfoRow title="Type" value={card.types[0]} />
+        <InfoRow title="Type" value={card.types && card.types.length ? card?.types[0] : card.subtypes[0]} />
         <InfoRow title="Supertype" value={card.supertype} />
         <InfoRow title="Rarity" value={card.rarity} />
       </View>

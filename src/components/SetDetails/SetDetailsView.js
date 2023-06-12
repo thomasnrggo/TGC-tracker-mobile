@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   SafeAreaView,
 } from "react-native";
+import TypeFilter from "../reusables/TypeFilter";
 
 const windowWidth = Dimensions.get("window").width;
 
@@ -18,7 +19,6 @@ const SetDetailView = ({ set, cards, loading, navigation }) => {
       <TouchableOpacity
         style={styles.cardItemContainer}
         onPress={() => {
-          console.log('Card',item);
           navigation.navigate("CardDetail", { card: item });
         }}
       >
@@ -50,6 +50,7 @@ const SetDetailView = ({ set, cards, loading, navigation }) => {
         <Text style={styles.setName}>{set?.name}</Text>
         <Text style={styles.series}>{set?.series}</Text>
       </View>
+      <TypeFilter selectedTypes={[]} onSelectType={(type) => console.log('type', type)} />
       {loading ? (
         <Text>Loading...</Text>
       ) : (
