@@ -44,7 +44,7 @@ const HomeView = ({ TGCSets, navigation }) => {
         contentContainerStyle={styles.setsContainer}
       />
 
-      <Button title="Clear data" onPress={() => AsyncStorage.clear()}>clear</Button>
+      {/* <Button title="Clear data" onPress={() => AsyncStorage.clear()}>clear</Button> */}
     </View>
   );
 };

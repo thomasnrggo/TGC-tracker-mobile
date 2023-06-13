@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Button , Alert } from "react-native";
+import Ionicons from "react-native-vector-icons/Ionicons";
 import { downloadAndSaveImage } from "../../utils/downloadAndSaveImage";
 
 
@@ -9,10 +10,11 @@ const useCardDetailViewModel = ({route, navigation}) => {
     useEffect(() => {
         navigation.setOptions({
           headerRight: () => (
-            <Button
+            <Ionicons
               onPress={() => downloadAndSaveImage(card?.images.large)}
-              title="Save image"
               color="white"
+              name="cloud-download-outline"
+              size={24}
             />
           ),
         });

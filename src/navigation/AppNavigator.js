@@ -1,41 +1,33 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "../components/Home";
-import Search from "../components/CardSearch";
-import SetDetail from "../components/SetDetails";
-import CardDetail from "../components/CardDetails";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import { View, Text } from "react-native";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import generateTabBarIcon from "../utils/generateTabBarIcon";
 
+import SetsStackScreen from "./Sets";
+import CardsStackScreen from "./Cards";
+import CollectionsStackScreen from "./Collections";
 
-const Stack = createNativeStackNavigator();
-
-function LogoTitle() {
-  return (
-    <View>
-      <Text style={{ fontWeight: "bold", color: "white", fontSize: 18}}>TGC Tracker</Text>
-    </View>
-  )
-}
+const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerStyle: {
-            backgroundColor: "#6a51ae",
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => {
+            let iconName = generateTabBarIcon(route.name);
+            return <Ionicons name={iconName} size={size} color={color} />;
           },
-          headerTitle: (props) => <LogoTitle {...props} />,
-          headerTintColor: "white",
-        }}
+          tabBarActiveTintColor: "#6a51ae",
+        })}
       >
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="SetDetail" component={SetDetail} />
-        <Stack.Screen name="Search" component={Search} />
-        <Stack.Screen name="CardDetail" component={CardDetail} />
-      </Stack.Navigator>
+        <Tab.Screen name="Sets" component={SetsStackScreen} />
+        <Tab.Screen name="Cards" component={CardsStackScreen} />
+        <Tab.Screen name="Collection" component={CollectionsStackScreen} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };
