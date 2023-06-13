@@ -24,9 +24,9 @@ const AppNavigator = () => {
           tabBarActiveTintColor: "#6a51ae",
         })}
       >
-        <Tab.Screen name="Sets" component={SetsStackScreen} />
-        <Tab.Screen name="Cards" component={CardsStackScreen} />
-        <Tab.Screen name="Collection" component={CollectionsStackScreen} />
+        <Tab.Screen name="SetsStack" component={SetsStackScreen} />
+        <Tab.Screen name="CardsStack" component={CardsStackScreen} />
+        <Tab.Screen name="CollectionStack" component={CollectionsStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

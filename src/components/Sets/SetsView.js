@@ -8,14 +8,11 @@ import {
   Dimensions,
   TouchableOpacity,
   StyleSheet,
-  Button,
 } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const windowWidth = Dimensions.get("window").width;
 
-const HomeView = ({ TGCSets, navigation }) => {
-
+const SetsView = ({ TGCSets, navigation }) => {
   const renderSetItem = ({ item }) => {
     const handleSetPress = () => {
       navigation.navigate("SetDetail", { setId: item.id });
@@ -26,7 +23,11 @@ const HomeView = ({ TGCSets, navigation }) => {
         style={styles.setItemContainer}
         onPress={handleSetPress}
       >
-        <Image source={{ uri: item.images.logo }} style={styles.setImage} resizeMode="contain" />
+        <Image
+          source={{ uri: item.images.logo }}
+          style={styles.setImage}
+          resizeMode="contain"
+        />
         <Text style={styles.setName}>{item.name}</Text>
         <Text style={styles.setReleaseDate}>{item.releaseDate}</Text>
       </TouchableOpacity>
@@ -43,8 +44,6 @@ const HomeView = ({ TGCSets, navigation }) => {
         renderItem={renderSetItem}
         contentContainerStyle={styles.setsContainer}
       />
-
-      {/* <Button title="Clear data" onPress={() => AsyncStorage.clear()}>clear</Button> */}
     </View>
   );
 };
@@ -81,4 +80,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeView;
+export default SetsView;

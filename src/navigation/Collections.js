@@ -17,7 +17,7 @@ const CollectionsStackScreen = () => {
         },
         headerTitle: (props) => <Title {...props} />,
         headerTintColor: "white",
-        ...(route.name !== "Home" && {
+        ...(route.name !== "Collection" && {
           headerLeft: () => {
             const previousRoute =
               navigation.getState().routes[

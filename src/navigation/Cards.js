@@ -19,7 +19,7 @@ const CardsStackScreen = () => {
         },
         headerTitle: (props) => <Title {...props} />,
         headerTintColor: "white",
-        ...(route.name !== "Home" && {
+        ...(route.name !== "Cards" && {
           headerLeft: () => {
             const previousRoute =
               navigation.getState().routes[

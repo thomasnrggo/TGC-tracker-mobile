@@ -1,10 +1,10 @@
 const generateTabBarIcon = (route) => {
   switch (route) {
-    case "Sets":
+    case "SetsStack":
       return "grid";
-    case "Cards":
+    case "CardsStack":
       return "tablet-portrait";
-    case "Collection":
+    case "CollectionStack":
       return "person";
     default:
       return "skull-outline";

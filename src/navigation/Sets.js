@@ -1,7 +1,7 @@
 import * as React from "react";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import SetsScreen from "../components/Home";
+import SetsScreen from "../components/Sets";
 import SetDetail from "../components/SetDetails";
 import CardDetail from "../components/CardDetails";
 import { TouchableOpacity, Text } from "react-native";
