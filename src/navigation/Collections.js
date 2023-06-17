@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { TouchableOpacity, Text } from "react-native";
 import Title from "../components/reusables/LogoTitle";
 import CollectionScreen from "../components/Collection";
+import CardDetail from "../components/CardDetails";
 
 const Stack = createNativeStackNavigator();
 
@@ -43,6 +44,7 @@ const CollectionsStackScreen = () => {
       })}
     >
       <Stack.Screen name="Collection" component={CollectionScreen} />
+      <Stack.Screen name="CardDetail" component={CardDetail} />
     </Stack.Navigator>
   );
 };

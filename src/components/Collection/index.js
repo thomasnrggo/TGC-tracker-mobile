@@ -1,9 +1,9 @@
 import CollectionView from "./CollectionView";
 import useCollectionViewModel from "./CollectionViewModel";
 
-const CollectionScreen = () => {
-    const props = useCollectionViewModel()
-    return <CollectionView {...props} />
-}
+const CollectionScreen = ({ navigation, route }) => {
+  const props = useCollectionViewModel(navigation, route);
+  return <CollectionView {...props} />;
+};
 
 export default CollectionScreen;

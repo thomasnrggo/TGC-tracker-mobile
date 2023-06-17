@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { Button , Alert } from "react-native";
+import { Alert } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { downloadAndSaveImage } from "../../utils/downloadAndSaveImage";
 import { useModel as useCollectionModel } from "../../models/collectionsModel";
-
 
 const useCardDetailViewModel = ({route, navigation}) => {
     const { card } = route.params;
@@ -26,7 +25,6 @@ const useCardDetailViewModel = ({route, navigation}) => {
     useEffect(() => {
       getDetail(card.id)
       .then((res) => {
-        console.log(res);
         setCardDetail({
           ...card,
           ...(res && {...res}),
@@ -44,7 +42,7 @@ const useCardDetailViewModel = ({route, navigation}) => {
         // TODO: add ability to update favorite && wish list
         update(cardWithUserData)
           .then((res) => {
-            Alert.alert(`${res.c_owned ? "Removed from collection" : "Added to collection"}`);
+            Alert.alert(`${!res.c_owned ? "Removed from collection" : "Added to collection"}`);
             setCardDetail(res)
           })
           .catch((err) => {

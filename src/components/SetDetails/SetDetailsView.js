@@ -47,10 +47,10 @@ const SetDetailView = ({ set, cards, loading, navigation }) => {
           style={styles.logo}
           resizeMode="contain"
         />
-        <Text style={styles.setName}>{set?.name}</Text>
-        <Text style={styles.series}>{set?.series}</Text>
+        {/* <Text style={styles.setName}>{set?.name}</Text>
+        <Text style={styles.series}>{set?.series}</Text> */}
       </View>
-      <TypeFilter selectedTypes={[]} onSelectType={(type) => console.log('type', type)} />
+      {/* <TypeFilter selectedTypes={[]} onSelectType={(type) => console.log('type', type)} /> */}
       {loading ? (
         <Text>Loading...</Text>
       ) : (
